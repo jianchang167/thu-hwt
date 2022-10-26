@@ -1,0 +1,51 @@
+#pragma once
+#include <iostream>
+
+class TimePoint {
+public:
+    TimePoint() {
+        s = 0;
+    }
+    TimePoint(int second) {
+        s = second;
+    }
+    void getTime() {
+        char tmp;
+        std::cin >> s;
+        std::cin >> tmp;
+    }
+    void showTime() {
+        std::cout << s << " " << "s" << std::endl;
+    }
+    int diff(const TimePoint& other) {
+        return s - other.s;
+    }
+private:
+    int s;
+};
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    int n;
+    cin >> n;
+    TimePoint a;
+    a.getTime();
+    int c=0;
+    for (int i = 1; i < n; i++)
+    {
+        TimePoint b;
+        b.getTime();
+        if (c < b.diff(a))
+        {
+            c = b.diff(a);
+        }
+        a = b;
+    }
+  
+    TimePoint d = TimePoint(c);
+    d.showTime();
+        
+  }
