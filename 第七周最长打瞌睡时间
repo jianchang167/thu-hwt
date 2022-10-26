@@ -1,0 +1,66 @@
+#include<iostream>
+#include<string>
+#include<cmath>
+
+using namespace std;
+int sixth2ten(string a)
+{
+	 int b = 0;
+	 if (size(a) == 8)
+
+	 {
+		 int b1 = a[0];
+		 int b2 = a[1];
+		 int b3 = a[3];
+		 int b4 = a[4];
+		 int b5 = a[6];
+		 int b6 = a[7];
+		 b1 = (b1 - 48) * 10 + (b2 - 48);
+		 b2 = (b3 - 48) * 10 + (b4 - 48);
+		 b3 = (b5 - 48) * 10 + (b6 - 48);
+		 b = b1 * 3600 + b2 * 60 + b3;
+	 }
+	 else
+	 {
+		 int b1 = a[0];
+		 int b2 = a[2];
+		 int b3 = a[3];
+		 int b4 = a[5];
+		 int b5 = a[6];
+		 b1 = (b1 - 48) ;
+		 b2 = (b2 - 48) * 10 + (b3 - 48);
+		 b3 = (b4 - 48) * 10 + (b5 - 48);
+		 b = b1 * 3600 + b2 * 60 + b3;
+	 }
+	return b;
+}
+void ten2six(int a)
+{
+	int b = a / 3600;
+	int c = (a - b * 3600) / 60;
+	int d = a - b * 3600 - c * 60;
+	cout << b << ":" << c << ":" << d << endl;
+
+}
+
+int main() {
+	int n = 0;
+	cin >> n;
+	int m[99];
+	string a;
+
+	for (int i = 0; i < n; i++)
+	{
+		cin >> a;
+		m[i]=sixth2ten(a);
+	}
+	int n1 = m[0];
+	for (int j = 0; j < n-1; j++)
+	{
+		if (n1 < m[j + 1] - m[j])
+		{
+			n1 = m[j + 1] - m[j];
+		}
+	}
+	ten2six(n1);
+}
