@@ -1,3 +1,4 @@
+//第七周题目1（含八进制小数转化为十进制（已被注释））
 # the-work-of-hanwh
 #include<iostream>
 #include<string>
@@ -23,7 +24,7 @@ int main() {
 		}
 		cout << g << endl;
 	}
-	else
+	/*else
 		for (int i = 0; i < b; i++)
 		{
 			if (i != c )
@@ -32,6 +33,6 @@ int main() {
 				e = e + f;
 			}
 			cout << e << endl;
-		}
+		}*/
 	
 }
