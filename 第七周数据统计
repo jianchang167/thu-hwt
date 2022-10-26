@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int ma = 0; int mb = 0;
+class Counter {
+public:
+    int g = 0; int h = 0;
+    Counter()
+    {
+        ma = ma + 1;
+        g = ma;
+        mb = mb + 1;
+        h = mb;
+    }
+
+    int uid() const {
+        return g;
+    }
+    int count() const
+    {
+        return mb;
+    }
+    ~Counter()
+    {
+        mb = mb - 1;
+    }
+    Counter(const Counter& other) {
+        g = ma + 1;
+        ma = ma + 1;
+        mb=mb + 1;
+
+    };
+};
+#include "counter_test.hpp"
